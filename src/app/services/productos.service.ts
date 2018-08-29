@@ -17,10 +17,12 @@ export class ProductosService {
   private cargarProductos() {
     this.http.get('https://portafolio-angular-716bc.firebaseio.com/productos_idx.json')
       .subscribe( (response: Producto[]) => {
-
-        console.log(response);
         this.productos = response;
           this.cargando = false;
       });
+  }
+
+  getProducto(id: string) {
+    return this.http.get(`https://portafolio-angular-716bc.firebaseio.com/productos/${ id }.json`);
   }
 }

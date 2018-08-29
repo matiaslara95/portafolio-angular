@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../../services/productos.service';
+import { ProductoDescripcion } from '../../interfaces/producto-descripcion.interface';
 
 @Component({
   selector: 'app-portafolio',

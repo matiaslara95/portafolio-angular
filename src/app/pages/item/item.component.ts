@@ -12,6 +12,7 @@ export class ItemComponent implements OnInit {
 
   cargando = true;
   producto: ProductoDescripcion;
+  IdProducto: string;
 
   constructor( private route: ActivatedRoute,
                public productoService: ProductosService ) { }
@@ -21,8 +22,8 @@ export class ItemComponent implements OnInit {
       .subscribe( parametros => {
         this.productoService.getProducto(parametros['id'])
           .subscribe( (producto: ProductoDescripcion) => {
+            this.IdProducto = parametros['id'];
             this.cargando = false;
-            console.log(producto);
             this.producto = producto;
           });
       });
